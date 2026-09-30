@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+  background: #10130f;
+}
+
+.kit {
+  min-height: 100vh;
+  background: #f4f1ea;
+  color: #10130f;
+}
+
+.kit-card {
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgb(16 19 15 / 8%);
+}
+
+.kit-wide {
+  max-width: 40rem;
+}
+
+.kit-title {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.kit-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.kit-input {
+  width: 100%;
+  border: 1px solid #d6d3d1;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: inherit;
+}
+
+.kit-input:focus {
+  outline: 2px solid #c6f25c;
+  border-color: transparent;
+}
+
+.kit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #10130f;
+  color: #f4f1ea;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.kit-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.kit-button-danger {
+  background: #991b1b;
+}
+
+.kit-link {
+  color: #3f6212;
+  font-size: 0.875rem;
+  text-underline-offset: 3px;
+}
+
+.kit-link:hover {
+  text-decoration: underline;
+}
+
+.kit-error {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+.kit-status {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  background: #ecfccb;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #3f6212;
+}
+
+.kit-muted {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #57534e;
+}
+
+.kit-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgb(16 19 15 / 10%);
+  background: #fff;
+  padding: 1rem 1.5rem;
+}
+
+.kit-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.kit-main {
+  width: min(64rem, calc(100% - 3rem));
+  margin: 2.5rem auto;
+}
+
+.kit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.kit-field {
+  margin-top: 1rem;
+}

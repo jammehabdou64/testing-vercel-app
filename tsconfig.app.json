@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "declaration": false,
+    "sourceMap": false,
+    "outDir": "build",
+    "rootDir": "."
+  },
+  "include": [
+    "server.ts",
+    "bootstrap/**/*.ts",
+    "app/**/*.ts",
+    "routes/**/*.ts",
+    "config/**/*.ts",
+    "database/**/*.ts"
+  ],
+  "exclude": ["node_modules", "build", "resources"]
+}

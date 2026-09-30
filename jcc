@@ -1,0 +1,4 @@
+#!/usr/bin/env bun
+import { app } from "./bootstrap/app";
+
+await app.handleCommand(process.argv);

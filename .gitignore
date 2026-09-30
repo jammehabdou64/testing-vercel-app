@@ -1,0 +1,37 @@
+# dependencies
+node_modules
+
+# output
+out
+dist
+*.tgz
+public/hot
+public/build
+
+# logs
+*.log
+
+# local database and uploads
+/database/*.sqlite
+/database/*.sqlite-*
+/storage/*
+!/storage/framework/
+/storage/framework/*
+!/storage/framework/sessions/
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+
+# environment
+.env
+.env.*
+!.env.example
+
+# caches
+.cache
+*.tsbuildinfo
+
+.idea
+.DS_Store
+.tinker_history
+build
+bootstrap/ssr
