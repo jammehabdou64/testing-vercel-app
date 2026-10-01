@@ -30,6 +30,6 @@
       "app/*": ["./app/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "api/index.js"],
   "exclude": ["node_modules", "build", "bootstrap/ssr", "public"]
 }

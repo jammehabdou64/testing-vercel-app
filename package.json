@@ -6,7 +6,7 @@
     "dev": "bun --hot server.ts",
     "watch": "bunx --bun vite",
     "vite-build": "bunx --bun vite build",
-    "start": "bun build/server",
+    "start": "bun build/api/index.js",
     "build": "bun jcc app:build",
     "start-ssr": "bun jcc inertia:start-ssr"
   },

@@ -14,7 +14,8 @@
     "app/**/*.ts",
     "routes/**/*.ts",
     "config/**/*.ts",
-    "database/**/*.ts"
+    "database/**/*.ts",
+    "api/index.ts"
   ],
   "exclude": ["node_modules", "build", "resources"]
 }
