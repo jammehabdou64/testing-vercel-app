@@ -24,8 +24,8 @@ export class AuthenticatedSessionController extends Controller {
     }
 
     const user = await Auth.user(request);
-    if (user && !user.hasVerifiedEmail()) {
-      return response().redirect("/email/verify").toResponse();
+    if (!user) {
+      return response().redirect("/login").toResponse();
     }
 
     return response().intended("/dashboard").toResponse();

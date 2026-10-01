@@ -8,7 +8,11 @@ createServer((page) =>
     render: ReactDOMServer.renderToString,
     resolve: (name) => {
       const pages = import.meta.glob("./Pages/**/*.tsx");
-      return pages[`./Pages/${name}.tsx`]();
+      const load = pages[`./Pages/${name}.tsx`] ?? pages["./Pages/Unbuilt.tsx"];
+      if (!load) {
+        throw new Error(`Missing Inertia page ${name}.`);
+      }
+      return load();
     },
     setup: ({ App, props }) => <App {...props} />,
   }),

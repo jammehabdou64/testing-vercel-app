@@ -4,6 +4,7 @@ import { cache } from "./cache";
 import { database } from "./database";
 import { filesystems } from "./filesystems";
 import { hashing } from "./hashing";
+import { leave } from "./leave";
 import { logging } from "./logging";
 import { mail } from "./mail";
 import { queue } from "./queue";
@@ -16,6 +17,7 @@ export const config = {
   database,
   filesystems,
   hashing,
+  leave,
   logging,
   mail,
   queue,

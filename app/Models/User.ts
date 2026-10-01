@@ -10,6 +10,9 @@ export class User extends Authenticatable {
   declare email: string;
   declare password: string;
   declare email_verified_at: string | null;
+  declare role_id: number | null;
+  declare personnel_id: number | null;
+  declare mission_id: number | null;
 
   static override booted(): void {
     this.creating(async (user) => {

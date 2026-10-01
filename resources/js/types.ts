@@ -1,6 +1,9 @@
 export type AuthUser = {
   name: string;
   email: string;
+  role: string | null;
+  personnelId: number | null;
+  missionId: number | null;
 } | null;
 
 export type SharedProps = {

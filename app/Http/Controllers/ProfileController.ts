@@ -18,20 +18,9 @@ export class ProfileController extends Controller {
       return response().redirect("/login").toResponse();
     }
     const email = String(data.email);
-    const changed = email !== String(user.getAttribute("email") ?? "");
     user.setAttribute("name", String(data.name));
     user.setAttribute("email", email);
-    if (changed) {
-      user.setAttribute("email_verified_at", null);
-    }
     await user.save();
-    if (changed) {
-      await user.sendEmailVerificationNotification();
-      return response()
-        .redirect("/email/verify")
-        .with("status", "Profile updated. Verify the new email address.")
-        .toResponse();
-    }
     return response().back("/profile").with("status", "Profile updated.").toResponse();
   }
 
