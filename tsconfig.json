@@ -20,8 +20,6 @@
     "noPropertyAccessFromIndexSignature": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": ".",
-    "ignoreDeprecations": "6.0",
     "paths": {
       "@Models/*": ["./app/Models/*"],
       "@Controllers/*": ["./app/Http/Controllers/*"],

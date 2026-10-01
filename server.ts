@@ -9,20 +9,20 @@ import { BroadcastSocket } from "bun-jcc/Broadcasting/BroadcastSocket";
 import { getBroadcaster } from "bun-jcc/Support/Facades/Broadcast";
 import { app } from "./bootstrap/app";
 
-const port = Number(env("PORT", 8000));
+const port = Number(process.env.NODE_ENV || env("PORT", 8000));
 const host = String(env("APP_HOST", "0.0.0.0"));
 
 await app.boot();
 
 const socket = new BroadcastSocket(getBroadcaster());
 
-Bun.serve({
+const server = Bun.serve({
   hostname: host,
   port: Number.isFinite(port) ? port : 8000,
   websocket: {
-    open: (ws) => socket.open(ws),
-    message: (ws, message) => socket.message(ws, message),
-    close: (ws) => socket.close(ws),
+    open: (ws: any) => socket.open(ws),
+    message: (ws: any, message: any) => socket.message(ws, message),
+    close: (ws: any) => socket.close(ws),
   },
   async fetch(request, server) {
     const upgraded = await socket.upgrade(request, server);
@@ -65,3 +65,5 @@ async function staticFile(request: Request): Promise<Response | null> {
   if (!(await file.exists()) || !(await file.stat()).isFile()) return null;
   return new Response(file);
 }
+
+console.log(`Server running at http://${host}:${port}`);
