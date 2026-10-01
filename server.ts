@@ -9,7 +9,7 @@ import { BroadcastSocket } from "bun-jcc/Broadcasting/BroadcastSocket";
 import { getBroadcaster } from "bun-jcc/Support/Facades/Broadcast";
 import { app } from "./bootstrap/app";
 
-const port = Number(process.env.NODE_ENV || env("PORT", 8000));
+const port = Number(env("PORT", 8000));
 const host = String(env("APP_HOST", "0.0.0.0"));
 
 await app.boot();
