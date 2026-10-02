@@ -17,8 +17,8 @@ await app.boot();
 const socket = new BroadcastSocket(getBroadcaster());
 
 const server = Bun.serve({
-  hostname: host,
-  port: Number.isFinite(port) ? port : 8000,
+  //   hostname: host,
+  //   port: Number.isFinite(port) ? port : 8000,
   websocket: {
     open: (ws: any) => socket.open(ws),
     message: (ws: any, message: any) => socket.message(ws, message),
