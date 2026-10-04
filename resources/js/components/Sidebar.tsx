@@ -28,8 +28,17 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
           <p className="text-xs text-white/70">Personnel management</p>
         </div>
       </div>
-      <nav aria-label="Primary" className="flex-1 space-y-6 overflow-y-auto px-3 pb-4">
-        <NavGroup label="Main" items={mainNavigation} role={role} url={page.url} onNavigate={onNavigate} />
+      <nav
+        aria-label="Primary"
+        className="flex-1 space-y-6 overflow-y-auto px-3 pb-4"
+      >
+        <NavGroup
+          label="Main"
+          items={mainNavigation}
+          role={role}
+          url={page.url}
+          onNavigate={onNavigate}
+        />
         <NavGroup
           label="Management"
           items={managementItems(role, personnelId)}
@@ -49,7 +58,10 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function managementItems(role: string | null | undefined, personnelId: number | null | undefined): NavItem[] {
+function managementItems(
+  role: string | null | undefined,
+  personnelId: number | null | undefined,
+): NavItem[] {
   const items = managementNavigation.filter((item) => canSee(item, role));
   if (role === "foreign_service_officer" && personnelId) {
     return [
@@ -93,9 +105,12 @@ function NavGroup({
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 onClick={onNavigate}
+                prefetch
                 className={cn(
                   "block rounded-md px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
-                  active ? "bg-white/15 font-medium text-white" : "text-white/80 hover:bg-white/10",
+                  active
+                    ? "bg-white/15 font-medium text-white"
+                    : "text-white/80 hover:bg-white/10",
                 )}
               >
                 {item.label}

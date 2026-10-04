@@ -8,7 +8,7 @@
     "vite-build": "bunx --bun vite build",
     "start": "bun build/api/index.js",
     "build": "bun jcc app:build",
-    "start-ssr": "bun jcc inertia:start-ssr"
+    "ssr": "bun jcc inertia:start-ssr"
   },
   "devDependencies": {
     "@types/bun": "latest",

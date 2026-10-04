@@ -8,6 +8,7 @@ import {
 import { HandleInertiaRequests } from "../app/Http/Middleware/HandleInertiaRequests";
 import { config } from "../config";
 import { providers } from "./providers";
+import { Logger } from "app/Http/Middleware/Logger";
 
 const app = Application.create();
 
@@ -22,6 +23,7 @@ await app
       AddQueuedCookiesToResponse,
       EncryptCookies,
     ]);
+    middleware.global([Logger]);
   })
   .providers(providers);
 
